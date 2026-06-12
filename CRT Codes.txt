@@ -1,0 +1,658 @@
+#include <stdio.h>
+//function declaration
+int add(int a , int b);// prototype when we are writing main before function
+int main() {
+    int result;
+    result= add(10,20);
+    printf("Sum = %d" , result);
+    return 0;
+}
+// function definition
+int add(int a , int b)
+{
+    return a+b;
+}
+----------------------------------------------------------------------------
+// Online C compiler to run C program online
+#include <stdio.h>
+//function declaration
+int add(int a , int b);// prototype when we are writing main before function
+int mul(int a , int b);
+int main() {
+    int result;
+    int product;
+    int sub;
+    int division;
+    result= add(10,20);
+    product= mul(5,4);
+    sub=
+    printf("Sum = %d \n" , result);
+    printf("Product = %d" , product);
+    return 0;
+}
+// function definition
+int add(int a , int b)
+{
+    return a+b;
+}
+int mul(int a , int b)
+{
+    return a*b;
+}
+------------------------------------------------------------------------------
+shows 10 output if the print statement comment is removed it shows error.
+#include <stdio.h>
+void test()
+{
+    int x= 10;
+    printf("%d",x); //local var
+}
+int main()
+{
+    test();
+    //printf("%d",x)
+    return 0;
+}
+-------------------------------------------------------------------------------
+// global variable
+#include <stdio.h>
+int x=50;//global variable
+void show()
+{
+    printf("%d\n",x); //local var
+}
+int main()
+{
+    show();
+    printf("%d",x);
+    return 0;
+}
+------------------------------------------------------------------
+// Static Variable it will assign only one memory in its life time.
+#include <stdio.h>
+void counter()
+{
+    static int count=0;
+    count++; //1
+    printf("%d\n",count); //(1)
+}
+int main()
+{
+    counter();
+    counter();
+    counter();
+    return 0;
+}
+---------------------------------------------------------------------------
+// arrays
+# include<stdio.h>
+int main()
+{
+    int arr[5],i;
+    for(i=0;i<5;i++)
+    {
+        printf("Enter a valur of array arr[%d]: ",i);
+        scanf("%d",&arr[i]);
+    }
+    printf("The array elements are: ");
+    for(i=0;i<5;i++)
+    {
+        printf("%d\t",arr[i]);
+    }
+    return 0;
+}
+----------------------------------------------------------------------------------
+addition of elements:
+# include<stdio.h>
+int main()
+{
+    int arr[10];int i;int sum=0;
+    for(i=0;i<10;i++)
+    {
+        printf("Enter a value of array arr[%d]: ",i);
+        scanf("%d",&arr[i]);
+        sum+=arr[i];
+    }
+    printf("Sum=%d ",sum);
+    return 0;
+}
+--------------------------------------------------------------------------------
+even &Odd
+#include<stdio.h>
+int main(){
+    int arr[5],i,even=0,odd=0;
+    for(i=1;i<=5;i++)
+    {
+        printf("Enter the value for arr[%d]: ",i);
+        scanf("%d",&arr[i]);
+        if(arr[i]%2==0)
+        even++;
+        else
+        odd++;
+    }
+    printf("Even=%d and Odd=%d",even,odd);
+    return 0;
+}
+-------------------------------------------------------------------------------------
+min max
+#include<stdio.h>
+int main()
+{
+    int arr[5]={2,7,58,37,8};
+    int i,max,min;
+    max=min=arr[0];
+    for(i=0;i<=5;i++)
+    {
+        if(arr[i]<min)
+        min=arr[i];
+        if(arr[i]>max)
+        max=arr[i];
+    }
+    printf("Min=%d and Max=%d",min,max);
+    return 0;
+}
+----------------------------------------------------------------------------------
+pattern: 111 this is runtime program as the input are not taken in code
+         222
+         333
+#include<stdio.h>
+int main()
+{
+    int arr[3] [3]={};
+    int i; int j;
+    for(i=1;i<=3;i++)
+    {
+        for(j=1;j<=3;j++)
+        {
+            printf("%d",i);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+---------------------------------------------------------------------------------
+pattern input taken in code compile time program:
+#include<stdio.h>
+int main()
+{
+    int matrix[4] [3]={ {1,2,3},
+                     {4,5,6},
+                     {7,8,9},
+                     {10,11,12}
+    };
+    int i; int j;
+    for(i=0;i<4;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            //printf("matrix [%d] [%d]",i,j);
+            printf("%d\t",matrix[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+-------------------------------------------------------------------------------
+one variable defined 2 different values will show error in output
+#include <stdio.h>
+
+int main() {
+    int a=15;
+    printf("%d",a);
+    int a=55;
+   printf("%d",a); 
+
+    return 0;
+}
+-----------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main() {
+    int a=3200;
+    long v=560000;
+    char ch='A';
+    float fl=3.14;
+    double d=12.15444;
+    printf("%d\n",a);
+    printf("%ld\n",v);
+    printf("%c\n",ch);
+    printf("%f\n",fl);
+    printf("%lf\n",d);
+    
+    return 0;
+}
+----------------------------------------------------------------------------------
+variable or field 'num' declared void shows error as void is null datatype
+#include <stdio.h>
+
+int main() {
+   void num=10;
+   printf("%v",num);
+    return 0;
+}
+_______________________________________________________________________________
+check why the output is 14 here
+#include <stdio.h>
+
+int main() {
+   int i=5;
+   int a= ++i + ++i;
+   printf("%d",a);
+    return 0;
+}
+-------------------------------------------------------------------------------
+check why the answer is 0 (condition is false so the Boolean value is returned i.e. 0)
+#include <stdio.h>
+
+int main() {
+   int i=16;
+   i=! i>15;
+   printf("i=%d",i);
+    return 0;
+}
+------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main() {
+   printf("%%%");
+    return 0;
+}
+--------------------------------------------------------------------------
+#include <stdio.h>
+
+int main() {
+    int num= - -4;
+    printf("num=%d",num);
+    return 0;
+}
+------------------------------------------------------------------------
+output is -128 of this so check why
+#include <stdio.h>
+
+int main() {
+    char num=127;
+    num=num+1;
+    printf("%d",num);
+    return 0;
+}
+---------------------------------------------------------------------------
+output is 1 why? because priority is given from left to right
+#include <stdio.h>
+
+int main() {
+    int a=5;
+    a=1,2,3;
+    printf("%d",a);
+    return 0;
+}
+------------------------------------------------------------------------------
+when bracket is given then the compiler will give priority from right to left
+#include <stdio.h>
+
+int main() {
+    int a;
+    a=(1,2,3);
+    printf("%d",a);
+    return 0;
+}
+------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main() {
+    int i=10;
+    i++;
+    i*i;
+    printf("%d\n",i);
+    return 0;
+}
+------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main() {
+    int i=0,j=0;
+    if(i++==j++)
+        printf("%d %d",i--,j--);
+    else
+    printf("%d %d",i,j);
+    return 0;
+}
+------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main() {
+    char str[]="\0";
+    if(printf("%s",str))
+    printf("if block is executed");
+    else
+    printf("else block is executed");
+
+    return 0;
+}
+-------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main() {
+    int i=5, j=4;
+    if(!printf(""))
+    printf("%d %d",i,j);
+    else
+    printf("%d %d",i++,j++);
+
+    return 0;
+}
+-----------------------------------------------------------------------------
+#include <stdio.h>
+
+int main() {
+    int i=1, j=0;
+    if(i-- == j)
+    printf("i=%d",--i);
+    else
+    printf("j=%d",++j);
+
+    return 0;
+}
+------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main() {
+    int i= 25;
+    if(i==25);
+    i=50;
+    if(i==25)
+    i=i+1;
+    else
+    i=i+1;
+    printf("%d",i);
+    return 0;
+}
+-------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main() {
+    if(sizeof(0))
+    printf("Hi");
+    else
+    printf("Hello");
+    return 0;
+}
+-------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main() {
+    if(sizeof('\0'))
+    printf("inside if block");
+    else
+    printf("inside else block");
+    return 0;
+}
+-------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main() {
+    int AGE=30;
+    float sal=15000.30;
+    printf("Address of age=%u\n",&AGE);// & will print address of age
+    printf("Address of sal=%u\n",&sal);// & will print address of salary
+    return 0;
+}
+-------------------------------------------------------------------------------
+#include <stdio.h>
+int main() {
+    int AGE=30;
+    int *p1=&AGE;
+    printf("Address of age=%u\n",&AGE);// & will print address of age
+    printf("Address of p1=%u\n",&p1);// & will print address of salary
+    printf("Value of p1=%d\n",p1);//value of p1 which is address of age
+    printf("Value of age=%d\n",AGE);//value of age 30
+    printf("Value of age=%d\n",*p1);//value of age 30
+    printf("Value of age=%d\n",*(&AGE));//value of age 30
+    
+    return 0;
+}
+output:
+Address of age=163410188
+Address of p1=163410176
+Value of p1=163410188
+Value of age=30
+Value of age=30
+Value of age=30
+---------------------------------------------------------------------------------
+#include <stdio.h>
+int main() {
+    int a=66;
+    char*c;
+    c=(char*)&a;
+    printf("%d\n",*c);
+    printf("%c\n",*c);
+    
+    return 0;
+}
+--------------------------------------------------------------------------------
+#include <stdio.h>
+void fun(int*);
+int main() {
+    int arr[]={3,6,9,12,15,18};
+    fun(arr);
+    return 0;
+}
+void fun(int*p)
+{
+    int i;
+    for(i=0;i<6;i++)
+    {
+        printf("%d\n",*p);
+        p++;
+    }
+}
+------------------------------------------------------------------------------------
+//NULL Pointer is a pointer that points to nothing. Incase if we don't have address to be assigned to pointer then we can simply use Null.
+#include <stdio.h>
+int main() {
+    int *ptr=NULL;
+    printf("The value of ptr is %p",ptr);
+    return 0;
+}
+----------------------------------------------------------------------------------------
+--::Main target of DSA is to solve your different problems::--
+Questions: Why DSA? Where and how would you apply it in your projects???
+Data structures are different ways of organising a data on your computer, that can be used effectively.
+------------------------------------------------------------------
+|complexity| Name        | sample                                |
+|O(1)      | Constant    | Accessing a specific element in array |
+|O(N)      | Linear      | Loop through array elements           |
+|O(Log N)  | Logarithmic | Find an element in sorted way         |
+|O(N^2)    | Quadratic   | Looking at every index in array twice |
+|O(2^N)    | Exponential | Double recursion in Fibonacci         |
+------------------------------------------------------------------
+O(N)- Linear Time
+array= [1,2,3,4,5]
+for element in array:
+print(element)
+//linear time since it is visiting every element of array
+-------------------------------------------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+int linearsearch(int arr[],int size,int target)
+{
+    for(int i=0;i<size;i++) //size=10
+    {
+        if(arr[i]==target) //1==7 condition false  7==7 true
+        { 
+            return i;  //index 6
+        }        
+    }
+    return 1;
+}
+int main() 
+{
+    int arr[]={1,2,3,4,5,6,7,8,9,10};
+    int size= sizeof(arr) / sizeof(arr[0]);
+    int target=7;
+    int result=linearsearch(arr,size,target);
+    if (result!=-1)
+    { 
+        cout<<"element found at index no="<<result<<endl;
+    }
+    else
+    {
+        cout<<"element not found";
+    }
+}
+----------------------------------------------------------------------------------------------------------
+binary search only works for sorted array.
+
+#include <iostream>
+using namespace std;
+int binarySearch(int arr[],int size,int target)
+{
+   int low=0;
+   int high=size-1;
+   while(low<=high)
+   {
+       int mid=(low+high)/2;
+       if(arr[mid]==target)
+       {
+           return mid;
+       }
+       else if(arr[mid]<target)
+       {
+           low=mid +1;
+       } 
+       else
+       {
+           high=mid;
+       }
+   }
+   return -1;
+}   
+int main()
+{
+    int arr[]={10,20,30,40,50,60,70};
+    int size= sizeof(arr) / sizeof(arr[0]);
+    int target=50;
+    int result=binarySearch(arr,size,target);
+    
+    if(result!=-1)
+    {
+        cout<<"element found at index no="<<result<<endl;
+    }
+    else
+    {
+        cout<<"element not found";
+
+    }
+}
+-------------------------------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+void printArray(int arr[],int n)
+{
+   for(int i=0;i<n;i++)
+   {
+       cout<<arr[i]<<" ";
+   }
+}
+int main()
+{
+    int arr[]={5,1,4,2,8};
+    int n= sizeof(arr) / sizeof(arr[0]);
+    cout<<"original array: ";
+    printArray(arr,n);
+}
+------------------------------------------------------------------------------------------
+A tree is a non linear data structure with hierarchical relationships between its elements without having a cycle, it is basically reversed from the real life tree.
+quicker and easier access the data
+store hierarchical data, like folder structure, organisations structure, XML/HTML data.
+-------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+int main(){
+    int i=65;
+    switch(i){
+        case 65:
+        printf("Integer 65");
+        break;
+        case 'A':
+        printf("Char 65");
+        break;
+    }
+    return 0;
+}
+--------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+int main() {
+    int i=1;
+    i++;
+    switch(i--)
+    {
+    case 1:
+    printf("case 1 executed");
+    break;
+    case 2:
+    printf("case 2 executed");
+    break;
+    default:
+    printf("Default executed");
+    }
+    
+    return 0;
+}
+--------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+int main() {
+    int i=1;
+    i++;
+    switch(3/2)
+    {
+    case 1:
+    printf("case 1 executed\n");
+    case 2:
+    printf("case 2 executed");
+    break;
+    default:
+    printf("Default executed");
+    }
+    
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+int main() {
+    int num=0;
+    if(num++,num--,++num)
+    switch(num)
+    {
+    case 1:
+    printf("case 1 executed\n");
+    break;
+    case 2:
+    printf("case 2 executed");
+    break;
+    default:
+    printf("Default executed");
+    break;
+    }
+    
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+int main() {
+    int num=5;
+    switch(num++ == 5)
+    {
+    case 1:
+    printf("TRUE");
+    break;
+    case 0:
+    printf("FALSE");
+    break;
+    default:
+    printf("Default executed");
+    }
+    
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------------------------
+
+
